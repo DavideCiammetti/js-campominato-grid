@@ -3,3 +3,27 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* variabili */
+:root{
+    --greenw-150: #7fffd4;
+}
+/* variabili */
+body{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* header */
+#header{
+    display: flex;
+    justify-content: space-between;
+}
+/* header */
+/* main */
+#main{
+    flex-grow: 1;
+    background-color: var(--greenw-150);
+}
+/* main */
+
