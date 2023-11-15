@@ -18,6 +18,10 @@ body{
 #header{
     display: flex;
     justify-content: space-between;
+    padding: 20px;
+}
+.button{
+    padding: 0 30px 0 30px;
 }
 /* header */
 /* main */
@@ -28,16 +32,16 @@ body{
     align-items: center;
 }
 .main-container{
-   width: 500px;
-   height:500px;
+   width: 450px;
+   height:450px;
    margin: 0 auto;
    display: flex;
    flex-wrap: wrap;
    align-content: flex-start;
 }
 .box{
-    width: 50px;
-    height: 50px;
+    width:45px;
+    height: 45px;
     border: 1px solid black;
     display: flex;
     justify-content: center;
@@ -45,3 +49,7 @@ body{
 }
 /* main */
 
+/* footer */
+.foot-container{
+    margin: 15px;
+}
