@@ -8,16 +8,6 @@
     // <div class="box">1</div>
 // </div> 
 
-// const container = document.querySelector('mainContainer');
-
-// for(let i = 1; i <= 100; i++){
-
-//     const content = document.createElement('div');
-//     content.classList.add('box');
-//     content.innerHTML += `<div>${i}</div>`;
-//     container.append(content);
-// }
-
 /*funzioni */
 
 // gestione griglia
