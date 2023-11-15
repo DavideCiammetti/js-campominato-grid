@@ -62,3 +62,96 @@ content.classList('box','active');
 for(let i = 0; i < 100; i++){
     <div>i</div>
 }
+
+
+# Bonus
+Aggiungere una select accanto al bottone di generazione, che fornisca una scelta tra tre diversi livelli di difficoltà:
+- con difficoltà 1 => 100 caselle, con un numero compreso tra 1 e 100, divise in 10 caselle per 10 righe;
+- con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
+- con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
+
+## commenti sul codice
+   inizializzo le variabili per una che prende le varie classi box-uno-due-tre e l'altra aggiunge la classe click-col che al click fa cambiare colore
+   const box = document.querySelectorAll('box-uno');
+   const classAdd = 'click-col';
+   creo un ciclo for che mi permette di ciclare tante volte quante il numero delle box e al suo interno grazie alla funzione aggiunge la classe click-col eincrementa index
+   for (let i = 0; i < box.length; i++) 
+       handleClick(box[i], i, classAdd);
+
+
+## appunto sul codice del click 
+
+button.addEventListener('click', function(){
+
+    if(difficult.value === 'hard'){     //difficoltà hard
+        const counter = 100;
+        const classAddContent = 'box-uno';
+        if(!click) {
+            handleGrid(counter, mainContainer,  typeOfHtmlTag, classAddContent);
+            click = true;
+        }
+        // click per box
+        const box = document.querySelectorAll('.box-uno');
+        const classAdd = 'click-col';
+
+        for (let i = 0; i < box.length; i++) {
+            handleClick(box[i], i, classAdd);
+        }
+    }
+
+    //difficoltà normal
+    if(difficult.value === 'normal'){   
+        const counter = 81;
+        const classAddContent = 'box-due';
+        if(!click) {
+            handleGrid(counter, mainContainer,  typeOfHtmlTag, classAddContent);
+            click = true;
+        }
+        // click per box
+        const box = document.querySelectorAll('.box-due');
+        const classAdd = 'click-col';
+
+        for (let i = 0; i < box.length; i++) {
+            handleClick(box[i], i, classAdd);
+        }
+    }
+
+    //difficoltà easy
+     if(difficult.value === 'easy'){      
+        const counter = 49;
+        const classAddContent = 'box-tre';
+        if(!click) {
+            handleGrid(counter, mainContainer,  typeOfHtmlTag, classAddContent);
+            click = true;
+        }
+        // click per box
+        const box = document.querySelectorAll('.box-tre');
+        const classAdd = 'click-col';
+
+        for (let i = 0; i < box.length; i++) {
+            handleClick(box[i], i, classAdd);
+        }
+    }
+});
+
+ho dovuto creare 3 condizioni if perche semplificando il codice in questo modo:
+
+  if(difficult.value === 'hard'){             // difficolta hard
+         counter = 100;
+        classAddContent = 'box-uno';
+    }else if(difficult.value === 'normal'){     // difficolta normal
+       counter = 81;
+         classAddContent = 'box-due';
+    }else if(difficult.value === 'easy'){       // difficolta easy
+         counter = 49;
+         classAddContent = 'box-tre';
+    }
+
+    const box = document.querySelectorAll('box-uno');
+    const classAdd = 'click-col';
+   eincrementa index
+    for (let i = 0; i < box.length; i++) {
+        handleClick(box[i], i, classAdd);
+    }
+
+la parte finale che mi serve per cliccare ogni singola box non viene letta del programma per questo l'ho inserita all'interno di ogni singola f che inizialmente erano else if ma poi ho preferito cambiare in if per leggibilità

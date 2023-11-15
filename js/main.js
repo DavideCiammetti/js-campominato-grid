@@ -30,7 +30,7 @@ function handleClick(box, index,classAdd) {
     });
 }
 /*funzioni */
-
+alert('per iniziare a giocare premi il pulsante play');
 
 // gestione click apertura campo da gioco
 const button = document.querySelector('.button');
