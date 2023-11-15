@@ -18,6 +18,8 @@
 //     container.append(content);
 // }
 
+/*funzioni */
+
 // gestione griglia
 function handleGrid(mainContainer, typeOfHtmlTag, classAddContent){
     let j = 0;
@@ -32,9 +34,20 @@ function handleGrid(mainContainer, typeOfHtmlTag, classAddContent){
     }
     return j;
 }
+/*funzioni */
 
-const container = document.querySelector('.main-container');
-const content = 'div';
-const boxClass = 'box';
 
-handleGrid(container,content,boxClass);
+// gestione click apertura campo da gioco
+const button = document.querySelector('.button');
+// evento click button
+let click= false;
+button.addEventListener('click', function(){
+
+    if (!click) {
+        const container = document.querySelector('.main-container');
+        const content = 'div';
+        const boxClass = 'box';
+        handleGrid(container, content, boxClass);
+        click = true;
+    }
+});
