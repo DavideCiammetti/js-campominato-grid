@@ -30,6 +30,7 @@ quando si **clicca** su ogni cella in console appare il numero della cella e que
 
 per questa seconda parte invece il click quindi l'evento su ogni singola cella andrà inserito nella creazione delle celle 
 
+
 ## ragionamento conclusivo 
 
 ### passo 1
