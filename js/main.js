@@ -22,32 +22,47 @@
 
 // gestione griglia
 function handleGrid(mainContainer, typeOfHtmlTag, classAddContent){
-    let j = 0;
     for(let i = 1; i <= 100; i++){
 
         const content = document.createElement(typeOfHtmlTag);
         content.classList.add(classAddContent);
         content.innerHTML +=`<div>${i}</div>`;
         mainContainer.append(content);
-        j = i;
-        console.log(j);
     }
-    return j;
+  
+}
+// gestione click per ogni casella
+function handleClick(box, index,classAdd) {
+    box.addEventListener('click', function () {
+
+        box.classList.add(classAdd);
+        console.log(`il numero cliccato è: ${index + 1}`);
+    });
 }
 /*funzioni */
 
 
 // gestione click apertura campo da gioco
 const button = document.querySelector('.button');
+let increm = 0;
+const container = document.querySelector('.main-container');
+const content = 'div';
+const boxClass = 'box';
+
 // evento click button
 let click= false;
 button.addEventListener('click', function(){
 
     if (!click) {
-        const container = document.querySelector('.main-container');
-        const content = 'div';
-        const boxClass = 'box';
         handleGrid(container, content, boxClass);
         click = true;
     }
+    // click per box
+    const box = document.querySelectorAll('.box');
+    const classAdd = 'click-col';
+
+    for (let i = 0; i < box.length; i++) {
+        handleClick(box[i], i, classAdd);
+    }
+    
 });
